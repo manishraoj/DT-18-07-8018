@@ -96,8 +96,12 @@ namespace WebApplication1
             get { return lblProfile.Text; }
             set { lblProfile.Text = value; }
         }
-        
-       
+
+        public bool Cart
+        {
+            get { return divCart.Visible; }
+            set { divCart.Visible = value; }
+        }
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             

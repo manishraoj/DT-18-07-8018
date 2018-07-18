@@ -211,11 +211,34 @@ namespace EasyHousingSolutions_DAL
         /// </summary>
 
 
-        public List<Property> ShowALLProperties()
+        public List<Property> ShowALLProperties(string state,string city)
         {
             EasyHousingSolutions_Entities entity = new EasyHousingSolutions_Entities();
             // Creating a list object of type Property
             List<Property> propertyList = new List<Property>();
+
+
+
+
+         var   result = (from prop in entity.Properties
+                      select prop);
+            if (state != string.Empty && city != string.Empty)
+            {
+                result = (from prop in entity.Properties
+                          where prop.StateId == (from sId in entity.States where sId.StateName == state select sId.StateId).FirstOrDefault()
+                          && prop.CityId == (from sId in entity.Cities where sId.CityName == city select sId.CityId).FirstOrDefault()
+                          select prop);
+            }
+            else if (state != string.Empty && city == string.Empty)
+            {
+                result = (from prop in entity.Properties
+                          where prop.StateId == (from sId in entity.States where sId.StateName == state select sId.StateId).FirstOrDefault()
+                          select prop);
+            }
+
+
+
+
 
             // A LINQ query to get all property details of the buyer
             var HouseDetails = from PropertyData in entity.Properties

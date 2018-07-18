@@ -67,13 +67,14 @@
                             <asp:HyperLink ID="hrlBuyer" runat="server" class="dropdown-item" Text="Buyer" NavigateUrl="~/BuyerRegistration.aspx"></asp:HyperLink></li>
                     </ul>
                 </li>
-
-                <li class="nav-item dropdown">
+      <li id="divCart" runat="server" visible="true">
+                        <asp:HyperLink ID="hplCart" runat="server" class="dropdown-item" Text="Cart" NavigateUrl="~/ShowCartOfBuyer.aspx"></asp:HyperLink>></li>
+                <%--<li class="nav-item dropdown">
                     <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Menu <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                        
                     </ul>
-                </li>
+                </li>--%>
 
 
 
