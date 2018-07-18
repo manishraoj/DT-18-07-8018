@@ -65,5 +65,17 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl bodydiv;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new WebApplication1.SiteMaster Master {
+            get {
+                return ((WebApplication1.SiteMaster)(base.Master));
+            }
+        }
     }
 }
